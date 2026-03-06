@@ -1,0 +1,283 @@
+/* ================= GLOBAL ================= */
+
+:root {
+  --bg: #f4f6fb;
+  --text: #333;
+  --card: #ffffff;
+  --primary: #e3528c;
+  --border: #e5e7eb;
+  --table-hover: #f1f5f9;
+}
+
+.dark {
+  --bg: #1e1e2f;
+  --text: #e5e7eb;
+  --card: #2a2a3d;
+  --primary: #7a7ac2;
+  --border: #444;
+  --table-hover: #35354d;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+  background: var(--primary);
+  padding: 14px 30px;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.navbar a:hover {
+  opacity: 0.8;
+}
+
+
+/* ================= CONTAINER ================= */
+
+.container {
+  padding: 40px;
+}
+
+
+/* ================= DASHBOARD CARDS ================= */
+
+.card-container {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: var(--card);
+  padding: 25px;
+  border-radius: 12px;
+  width: 220px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.12);
+}
+
+.card-title {
+  color: var(--text);
+  opacity: 0.7;
+  font-size: 14px;
+}
+
+.card-value {
+  font-size: 32px;
+  font-weight: bold;
+  margin-top: 8px;
+  color: var(--primary);
+}
+
+
+/* ================= BOOKING BOX ================= */
+
+.booking-box {
+  background: var(--card);
+  padding: 25px;
+  border-radius: 12px;
+  width: 420px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+
+/* ================= FORM INPUTS ================= */
+
+input,
+select {
+  width: 95%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  margin-top: 6px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  background: var(--card);
+  color: var(--text);
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+
+/* ================= BUTTONS ================= */
+
+button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 9px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+button:disabled {
+  background: #aaa;
+  cursor: not-allowed;
+}
+
+
+/* ================= SLOT BUTTONS ================= */
+
+.slot-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.slot-button {
+  padding: 6px 12px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  border-radius: 6px;
+  cursor: pointer;
+  color: var(--text);
+}
+
+.slot-button.selected {
+  background: var(--primary);
+  color: white;
+}
+
+.slot-button.booked {
+  background: #ccc;
+  color: #666;
+  cursor: not-allowed;
+}
+
+
+/* ================= TABLE ================= */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--card);
+  margin-top: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+}
+
+th,
+td {
+  padding: 12px 15px;
+  text-align: left;
+}
+
+th {
+  background: var(--border);
+  font-weight: 600;
+}
+
+tr:nth-child(even) {
+  background: rgba(0,0,0,0.02);
+}
+
+tr:hover {
+  background: var(--table-hover);
+}
+
+
+/* ================= TITLES ================= */
+
+h1 {
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin-bottom: 15px;
+}
+
+
+/* ================= FORM CARD ================= */
+
+.form-card {
+  background: var(--card);
+  padding: 25px;
+  border-radius: 12px;
+  width: 420px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  margin-bottom: 30px;
+}
+
+.doctor-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+
+/* ================= TABLE CARD ================= */
+
+.table-card {
+  background: var(--card);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+/* Cancel Button */
+
+.danger-button {
+  background: #ef4444;
+}
+
+.danger-button:hover {
+  background: #dc2626;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+
+  .container {
+    padding: 20px;
+  }
+
+  .card-container {
+    flex-direction: column;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .booking-box,
+  .form-card {
+    width: 100%;
+  }
+
+}
